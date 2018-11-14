@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.framgianguyenhotiendat.pagingnetwork.ui.roomload.RoomLoadViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/linear_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_8"
+            android:background="@drawable/shape_edit_bg"
+            android:hint="Title"
+            android:padding="4dp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edit_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_8"
+            android:background="@drawable/shape_edit_bg"
+            android:hint="Descreption - NotUse"
+            android:padding="4dp" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/fb_add_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onAddNote(editTitle.getText().toString())}"
+            android:text="Add Note" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/fb_view_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.viewNotes()}"
+            android:text="View List" />
+    </LinearLayout>
+
+</layout>
